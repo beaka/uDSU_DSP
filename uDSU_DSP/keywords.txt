@@ -1,0 +1,33 @@
+#######################################
+# Syntax Coloring Map for uDSU_DSP
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+uDSU_FIR	KEYWORD1
+uDSU_Biquad	KEYWORD1
+uDSU_BiquadCascade	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+reset	KEYWORD2
+update	KEYWORD2
+
+dsu_init	KEYWORD2
+dsu_fmacss	KEYWORD2
+dsu_xmulss	KEYWORD2
+dsu_smacss1	KEYWORD2
+dsu_smscss1	KEYWORD2
+dsu_ashr3	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DSU_MM_FAST	LITERAL1
+DSU_MM_NORMAL	LITERAL1
