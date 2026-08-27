@@ -10,8 +10,82 @@
 
 #include <avr/io.h>
 
+extern "C" unsigned long local_xmacsu0(
+    int dx,
+    unsigned int dy
+);
+
+extern "C" unsigned long local_xmacus0(
+    unsigned int dx,
+    int dy
+);
+
+extern "C" unsigned long local_xmacss0(
+    int dx,
+    int dy
+);
+
+extern "C" long local_smacuu0(
+    unsigned int dx,
+    unsigned int dy
+);
+
 #define DSU_MM_FAST		0x00
 #define DSU_MM_NORMAL	0x40
+
+// ============================================================================
+// LOCAL FUNCTIONS EXPORTED BY udsu_local.S
+// ============================================================================
+
+extern "C" void local_dsu_reset(void);
+
+extern "C" unsigned long local_xmnluu(
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" long local_xmnlss(
+    int dx,
+    int dy
+);
+
+extern "C" unsigned long local_fxmnluu(
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" long local_fxmnlss(
+    int dx,
+    int dy
+);
+
+extern "C" unsigned long local_xmscuu0(
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" unsigned long local_xmscuu1(
+    unsigned long da,
+    unsigned int dx,
+    unsigned int dy
+);
+
+extern "C" unsigned long local_xmscss0(
+    int dx,
+    int dy
+);
+
+extern "C" unsigned long local_xmscss1(
+    unsigned long da,
+    int dx,
+    int dy
+);
+
+extern "C" long local_dsu_ashr2(
+    unsigned char shn
+);
+
+extern "C" unsigned long local_dsu_div0(void);
 
 extern "C" void dsu_init(unsigned char dsu_mm);
 
@@ -98,5 +172,28 @@ extern "C" unsigned int dsu_dx(void);
 extern "C" unsigned int dsu_dy(void);
 
 extern "C" long dsu_fmacss(unsigned int dx, unsigned int dy, unsigned char cnt);
+
+//=============================================================================
+// Additional uDSC functions exported by udsu.S
+// LGT8FX-SDK v0.2
+//=============================================================================
+
+// Fixed-point multiply
+extern "C" unsigned long dsu_fxmuluu(unsigned int dx, unsigned int dy);
+extern "C" long dsu_fxmulsu(int dx, unsigned int dy);
+extern "C" long dsu_fxmulus(unsigned int dx, int dy);
+extern "C" long dsu_fxmulss(int dx, int dy);
+
+// Negative multiply
+extern "C" unsigned long dsu_xmnluu(unsigned int dx, unsigned int dy);
+extern "C" long dsu_xmnlsu(int dx, unsigned int dy);
+extern "C" long dsu_xmnlus(unsigned int dx, int dy);
+extern "C" long dsu_xmnlss(int dx, int dy);
+
+// Fixed negative multiply
+extern "C" unsigned long dsu_fxmnluu(unsigned int dx, unsigned int dy);
+extern "C" long dsu_fxmnlsu(int dx, unsigned int dy);
+extern "C" long dsu_fxmnlus(unsigned int dx, int dy);
+extern "C" long dsu_fxmnlss(int dx, int dy);
 
 #endif	
