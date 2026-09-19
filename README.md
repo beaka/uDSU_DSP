@@ -7,8 +7,11 @@ Added a FFT example, 128 bin completes in 6ms.
 Added property FIR to change coefficients in existing instance, added a delay property for I/Q quadrature sync and converted to a circular buffer for speed.
 
 47 tap FIR Hilbert in Q15 for I/Q with delayed I completes in 12us.
+
 How to use the FIR:
+
 #define FILTER_TAPS 47
+
 int16_t hilbert_ssb[FILTER_TAPS] = {
   0, 0, 0, 0, 0, -1, 0, -9,
   0, -70, 0, -353, 0, -1223, 0, -3016,
